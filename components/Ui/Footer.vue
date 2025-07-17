@@ -3,7 +3,7 @@
 import Service from '~/service/Service'
 import urls from '~/service/urls'
 const { locale } = useI18n()
-const localePath = useLocalePath();
+const localePath = useLocalePath()
 //===============================-< get contact >-===============================
 //> variables
 const contact = ref()
@@ -16,7 +16,7 @@ async function getContact() {
 getContact()
 
 watch(locale, () => {
-	getContact();
+	getContact()
 })
 </script>
 <template>
@@ -97,6 +97,13 @@ watch(locale, () => {
 				class="border-t border-t-gray-200 mt-6 pt-6 text-center font-inter text-gray-600 text-sm"
 			>
 				© {{ new Date().getFullYear() }} .{{ $t('footer_copy') }}
+			</div>
+			<div class="mt-4 text-center font-inter text-gray-600 text-sm">
+				Made with ❤️ by:
+				<a href="https://t.me/webcode_team" target="_blank" class="text-blue-400 hover:underline"
+					>WebCode</a
+				>
+				Team
 			</div>
 		</div>
 	</footer>

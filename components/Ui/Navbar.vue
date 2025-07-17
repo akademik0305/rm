@@ -204,7 +204,7 @@ onUnmounted(() => {
 								>{{
 									authStore?.user?.firstname
 										? authStore?.user?.firstname
-										: 'Kirish'
+										: $t('login')
 								}}</span
 							>
 						</button>

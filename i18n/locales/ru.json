@@ -67,5 +67,6 @@
   "company_cards": "Карты компании",
   "card_number": "Номер карты",
   "card_name": "Название карты",
-  "card_number_copied": "Номер карты скопирован"
+  "card_number_copied": "Номер карты скопирован",
+    "login": "Вход"
 }

@@ -67,5 +67,6 @@
   "company_cards": "Kompaniya karta raqamlari",
   "card_number": "Karta raqami",
   "card_name": "Karta nomi",
-  "card_number_copied": "Karta raqamidan nusxa olindi"
+  "card_number_copied": "Karta raqamidan nusxa olindi",
+  "login": "Kirish"
 }

@@ -125,10 +125,10 @@ function refetchSections() {
 								<a
 									:href="slide.url"
 									target="_blank"
-									class="block h-[30svh] md:h-[450px]"
+									class="block h-auto md:h-[450px]"
 								>
 									<img
-										class="w-full h-full object-cover rounded-xl"
+										class="w-full h-full object-contain rounded-xl overflow-hidden"
 										:src="slide.imageUrl"
 										alt="kfc"
 									/>
