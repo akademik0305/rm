@@ -1,34 +1,34 @@
 <script lang="ts" setup>
 //===============================-< imports >-===============================
-import Service from '~/service/Service'
-import urls from '~/service/urls'
-import type { TCategory } from '~/types/api.types'
-const { locale } = useI18n()
-const route = useRoute()
-const token = useToken()
+import Service from "~/service/Service";
+import urls from "~/service/urls";
+import type { TCategory } from "~/types/api.types";
+const { locale } = useI18n();
+const route = useRoute();
+const token = useToken();
 //===============================-< get category >-===============================
 //> variables
-const category = ref<TCategory>()
-const current_page = ref(1)
+const category = ref<TCategory>();
+const current_page = ref(1);
 //> functions
 async function getCategory() {
 	const res = await Service.get<TCategory>(
 		urls.getCategoryProducts(Number(route.params.id), current_page.value),
 		locale.value,
 		token.value
-	)
+	);
 
-	category.value = res.data
+	category.value = res.data;
 }
 
-getCategory()
+getCategory();
 
 //===============================-< change page >-===============================
 //> variables
 //> functions
 function changePage(page: number) {
-	current_page.value = page
-	getCategory()
+	current_page.value = page;
+	getCategory();
 }
 </script>
 <template>
@@ -48,7 +48,9 @@ function changePage(page: number) {
 		<section class="mt-8">
 			<div class="container">
 				<div v-if="category.dataProvider.items.length">
-					<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5">
+					<div
+						class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5"
+					>
 						<ProductCard
 							v-for="product in category.dataProvider.items"
 							:key="product.id"
@@ -75,7 +77,7 @@ function changePage(page: number) {
 						/>
 					</div>
 					<p class="font-meduim text-base text-gray-4">
-						{{ $t('empty_data_product') }}
+						{{ $t("empty_data_product") }}
 					</p>
 				</div>
 			</div>

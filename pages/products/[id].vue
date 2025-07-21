@@ -1,29 +1,29 @@
 <script lang="ts" setup>
 //===============================-< imports >-===============================
-import Service from '~/service/Service'
-import urls from '~/service/urls'
-import { useCartStore } from '~/store/cart.store'
-import type { TProduct } from '~/types/api.types'
-const { locale } = useI18n()
-const route = useRoute()
-const token = useToken()
-const cartStore = useCartStore()
-const localePath = useLocalePath()
+import Service from "~/service/Service";
+import urls from "~/service/urls";
+import { useCartStore } from "~/store/cart.store";
+import type { TProduct } from "~/types/api.types";
+const { locale } = useI18n();
+const route = useRoute();
+const token = useToken();
+const cartStore = useCartStore();
+const localePath = useLocalePath();
 //===============================-< get product detail >-===============================
 //> variables
-const product = ref<TProduct>()
+const product = ref<TProduct>();
 //> functions
 async function getProduct() {
 	const res = await Service.get<TProduct>(
 		urls.productDetail(Number(route.params.id)),
 		locale.value,
 		token.value
-	)
+	);
 
-	product.value = res.data
+	product.value = res.data;
 }
 
-getProduct()
+getProduct();
 </script>
 <template>
 	<main v-if="product" class="py-6">
@@ -111,7 +111,7 @@ getProduct()
 						</ClientOnly>
 					</div>
 					<div class="flex-1 flex flex-col">
-						<h4 class="text-xl font-semibold">{{ $t('about_product') }}</h4>
+						<h4 class="text-xl font-semibold">{{ $t("about_product") }}</h4>
 						<p class="mt-2">
 							{{ product.description }}
 						</p>
@@ -120,7 +120,7 @@ getProduct()
 								{{ product.priceFormat }}
 							</p>
 							<p
-							v-if="product.oldPrice"
+								v-if="product.oldPrice"
 								class="font-medium text-xs md:text-sm line-through text-subtext"
 							>
 								{{ product.oldPriceFormat }}
@@ -149,7 +149,7 @@ getProduct()
 										class="text-2xl w-6 text-main group-hover:text-white"
 									/>
 									<span class="text-sm text-main group-hover:text-white">{{
-										$t('delete')
+										$t("delete")
 									}}</span>
 								</button>
 							</div>
@@ -158,7 +158,7 @@ getProduct()
 									v-if="!product.residue"
 									class="flex items-center justify-center gap-2 bg-gray-400 border border-bg rounded-full w-full py-2 px-3 md:px-6 flex-1 text-xs md:text-base"
 								>
-									{{ $t('empty') }}
+									{{ $t("empty") }}
 								</p>
 								<button
 									v-else
@@ -170,7 +170,7 @@ getProduct()
 										class="text-2xl w-6 text-bg group-hover:text-main"
 									/>
 									<span class="text-sm text-bg group-hover:text-main">{{
-										$t('add_to_cart')
+										$t("add_to_cart")
 									}}</span>
 								</button>
 							</div>

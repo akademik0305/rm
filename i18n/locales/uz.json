@@ -68,5 +68,9 @@
   "card_number": "Karta raqami",
   "card_name": "Karta nomi",
   "card_number_copied": "Karta raqamidan nusxa olindi",
-  "login": "Kirish"
+  "login": "Kirish",
+  "enter_address": "Manzilni kiriting",
+  "address": "Manzil",
+  "delivery": "Yetkazib berish",
+  "take_self": "Olib ketish"
 }
